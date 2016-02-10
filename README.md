@@ -18,4 +18,4 @@ The 74HC595 should have Q0-Q7 wired to D0-D7 on the LCD board.
 
 ## Example
 
-![alt text](https://github.com/hollobon/1602a_lcd/master/breadboard.jpg "Wired up on a breadboard")
+![alt text](https://raw.githubusercontent.com/hollobon/1602a_lcd/master/breadboard.jpg "Wired up on a breadboard")
