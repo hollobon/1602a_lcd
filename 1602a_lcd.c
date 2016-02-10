@@ -41,6 +41,12 @@ void write_1602a(bool register_select, uint8_t value)
     _delay_us(37);
 }
 
+void puts_1602a(const char *str)
+{
+    while (*str)
+        write_1602a(true, *str++);
+}
+
 int main(void)
 {
     // Set up outputs for shift register
@@ -56,12 +62,8 @@ int main(void)
     _delay_ms(2);
     write_1602a(false, 0b00001110); // display on
     write_1602a(false, 0b00000110); // entry mode set
-    char *test = "Test";
-    while (*test)
-        write_1602a(true, *test++);
+    puts_1602a("Test");
     write_1602a(false, 0x80 + 0x40); // set DDRAM address - first char second line
-    test = "Line 2";
-    while (*test)
-        write_1602a(true, *test++);
+    puts_1602a("Line 2");
     while (1);
 }
