@@ -22,6 +22,6 @@ The 74HC595 should have Q0-Q7 wired to D0-D7 on the LCD board.
 
 ## Datasheet
 
-[Hitachi HD44780U][https://www.sparkfun.com/datasheets/LCD/HD44780.pdf].
+[Hitachi HD44780U](https://www.sparkfun.com/datasheets/LCD/HD44780.pdf).
 
 
