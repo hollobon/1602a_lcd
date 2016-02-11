@@ -3,6 +3,8 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
+#include "1602a_lcd.h"
+
 // Write a value to the shift register and make available on outputs
 void sr_write(uint8_t value)
 {
@@ -44,26 +46,5 @@ void write_1602a(bool register_select, uint8_t value)
 void puts_1602a(const char *str)
 {
     while (*str)
-        write_1602a(true, *str++);
-}
-
-int main(void)
-{
-    // Set up outputs for shift register
-    DDRB |= _BV(4) | _BV(5);
-    DDRE |= _BV(6);
-
-    // Set up outputs for E / RS
-    DDRD |= _BV(0) | _BV(1); 
-
-    _delay_ms(200);
-    write_1602a(false, 0b00111000); // function set - 8 bit, 2 lines, 5x11
-    write_1602a(false, 0b00000001); // clear display
-    _delay_ms(2);
-    write_1602a(false, 0b00001110); // display on
-    write_1602a(false, 0b00000110); // entry mode set
-    puts_1602a("Test");
-    write_1602a(false, 0x80 + 0x40); // set DDRAM address - first char second line
-    puts_1602a("Line 2");
-    while (1);
+        putc_1602a(*str++);
 }
