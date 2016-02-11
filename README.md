@@ -4,14 +4,14 @@ shift register.
 ## Wiring
 
 ```
-32u4 D0 - 1602a E
-32u4 D1 - 1602a RS
-ground  - 1602a R/W
-32u4 E6 - 74HC595 DS
-32u4 B5 - 74HC595 SHCP
-32u4 B4 - 74HC595 STCP
-pull up - 74HC595 !MR
-ground  - 74HC595 !OE
+32u4 PD0 - 1602a E
+32u4 PD1 - 1602a RS
+ground   - 1602a R/W
+32u4 PE6 - 74HC595 DS
+32u4 PB5 - 74HC595 SHCP
+32u4 PB4 - 74HC595 STCP
+pull up  - 74HC595 !MR
+ground   - 74HC595 !OE
 ```
 
 The 74HC595 should have Q0-Q7 wired to D0-D7 on the LCD board. 
